@@ -1,0 +1,124 @@
+body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  min-height: 100vh;
+      margin: 0;
+    }
+
+  .login-box, .game-box {
+    width: 350px;
+    padding: 2.5rem;   
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    /* backdrop-filter: blur(10px); */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    }
+
+  h2 {
+    margin-bottom: 20px;
+    } 
+  
+  .login-container h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 2rem;
+    font-weight: 300; 
+    }
+
+
+  label {
+      display: block;
+      margin-top: 10px;
+    }
+
+  input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+  button {
+      /* default button styles (use specific selectors to override for game buttons) */
+      width: 100%;
+      margin-top: 15px;
+      padding: 10px;
+      color: #2575fc;
+      background: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+  button:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+  #message {
+      color: red;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    /* Tic Tac Toe styles */
+  .game-box {
+      display: none;
+      margin-top: 20px;
+    }
+
+  /* Support previous class names (.board/.cell) and new ones (.game/.box) */
+  .board,
+  .game {
+      display: grid;
+      grid-template-columns: repeat(3, 80px);
+      gap: 8px;
+      justify-content: center;
+      margin-top: 15px;
+  }
+
+  /* Game cells (buttons) - more specific than global button rule above */
+  .cell,
+  .game .box,
+  button.box {
+      width: 80px !important;
+      height: 80px;
+      background: #fff;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      cursor: pointer;
+      border-radius: 8px;
+      border: 2px solid rgba(0,0,0,0.06);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      padding: 0;
+  }
+
+  .cell:hover,
+  .game .box:hover,
+  button.box:hover {
+      background: #f3f6fb;
+      transform: translateY(-2px);
+      transition: all .12s ease;
+  }
+
+  /* Win highlight */
+  .win {
+      background: linear-gradient(90deg,#4caf50,#2e7d32);
+      color: #fff;
+      transform: scale(1.04);
+      box-shadow: 0 6px 18px rgba(46,125,50,0.18);
+  }
+
+  #status {
+      margin-top: 15px;
+      font-weight: bold;
+    }
